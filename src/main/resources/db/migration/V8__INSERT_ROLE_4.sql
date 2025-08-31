@@ -1,0 +1,1 @@
+alter type roles add value if not exists 'MARKETING'

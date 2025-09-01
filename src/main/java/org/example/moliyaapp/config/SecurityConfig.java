@@ -123,26 +123,7 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(List.of(
                 "http://localhost:3000",
-                "http://192.168.1.183",
-                "http://192.168.50.173:3000",
-                "http://192.168.50.173",
-                "http://10.173.41.173",
-                "http://192.168.56.1",
-                "http://192.168.10.73",
-                "http://192.168.10.241",
-                "http://192.168.10.1",
-                "http://10.61.189.173:3000",
-                "http://10.61.189.173",
-                "http://192.168.0.117:3000",
-                "http://192.168.0.117",
-                "http://192.168.10.241:3000",
-                "http://192.168.141.173:3000",
-                "http://192.168.115.173:3000",
-                "http://192.168.211.173:3000",
-                "http://192.168.211.173",
-                "http://192.168.115.173",
-                "http://192.168.141.173",
-                "https://istiqlol.iftixormaktabi.uz"
+                "https://istiqlol-api.iftixormaktabi.uz"
         ));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type", "Accept"));
@@ -153,29 +134,6 @@ public class SecurityConfig {
         source.registerCorsConfiguration("/**", configuration);
         return source; // ✅ Correct bean type
     }
-//
-//    @Bean
-//    public CorsFilter corsConfigurationSource() {
-//        CorsConfiguration configuration = new CorsConfiguration();
-//
-//        configuration.addAllowedOriginPattern("*"); //disabled
-//        configuration.setAllowedHeaders(List.of("*"));
-//        configuration.setExposedHeaders(List.of("*"));
-//        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-//        configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "Accept"));
-//        configuration.setAllowCredentials(true);
-//        configuration.setAllowedOrigins(List.of(
-//                "http://localhost:3000",
-//                "http://192.168.1.183/",
-//                "http://192.168.81.173/",
-//                "https://iftixor-moliya-crm.vercel.app/",
-//                "https://iftixor-school.netlify.app/",
-//                "https://crm.iftixormaktabi.uz"));
-//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//        source.registerCorsConfiguration("/**", configuration);
-//        return new CorsFilter(source);
-//    }
-
     @Bean
     public RestTemplate restTemplate() {
         return new RestTemplate(new HttpComponentsClientHttpRequestFactory());

@@ -18,8 +18,7 @@ import org.springframework.context.annotation.Configuration;
         ),
         servers = {
                 @Server(url = "http://localhost:1212", description = "Local Server"),
-                @Server(url = "http://149.102.138.213:8787", description = "Prod Server"),
-                @Server(url = "https://istiqlol.iftixormaktabi.uz", description = "PROD SERVER | CONTABO")
+                @Server(url = "https://istiqlol-api.iftixormaktabi.uz", description = "PROD SERVER | CONTABO")
         },
         security = @SecurityRequirement(name = "bearerAuth") // Apply globally
 )
